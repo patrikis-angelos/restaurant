@@ -75,10 +75,14 @@
 
 .tab {
   position: absolute;
-  background-color: #6e1c19;
   padding: 15px;
   top: -45px;
   cursor: pointer;
+  background-color: #9b2723;
+}
+
+.active {
+  background-color: #6e1c19;
 }
 
 .category-title {

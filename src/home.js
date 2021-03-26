@@ -21,7 +21,7 @@ const main = () => {
   wrapper.classList.add('wrapper');
 
   const about = document.createElement('div');
-  about.classList.add('tab');
+  about.classList.add('tab', 'active');
   about.textContent = 'About';
   const menu = document.createElement('div');
   menu.classList.add('tab');
