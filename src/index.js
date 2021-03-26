@@ -22,7 +22,6 @@ function openTab(index) {
   tabMethods[index]();
 }
 
-
 for (let i = 0; i < tabs.length; i += 1) {
   tabs[i].onclick = openTab.bind(null, i);
 }

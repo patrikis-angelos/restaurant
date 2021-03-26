@@ -1,3 +1,27 @@
+const MenuCategory = (title, imgUrl, options) => {
+  const getTitle = () => title;
+  const getImg = () => imgUrl;
+  const getOptions = () => options;
+
+  return {
+    getTitle, getImg, getOptions
+  };
+};
+
+const Option = (title, price, description) => {
+  const getTitle = () => title;
+  const getPrice = () => price;
+  const getDescription = () => description;
+
+  return {
+    getTitle, getPrice, getDescription
+  };
+};
+
+const option1 = Option('Zuffoli di Salsiccia', '6,20', 'Τραγανές φλογέρες με λουκάνικο, κόκκινες πιπεριές και πεκορίνο.');
+const mC = MenuCategory('Pizza', '../src/pizza2.jpg', [option1, option1, option1, option1]);
+const categories = [mC, mC, mC];
+
 function createTitle (title) {
   const categoryTitle = document.createElement('h3');
   categoryTitle.textContent = title;
@@ -18,14 +42,14 @@ function createImg (imgUrl) {
   return imgContainer;
 }
 
-function createOption (title, price, description) {
+function createOption (option) {
   const optionTitle = document.createElement('h4');
   optionTitle.classList.add('color-white');
-  optionTitle.textContent = `${title} ${price}`;
+  optionTitle.textContent = `${option.getTitle()} ${option.getPrice()}`;
 
   const desc = document.createElement('p');
   desc.classList.add('m-top-10');
-  desc.textContent = description;
+  desc.textContent = option.getDescription();
 
   const container = document.createElement('div');
   container.classList.add('m-top-10');
@@ -36,30 +60,39 @@ function createOption (title, price, description) {
   return container;
 }
 
-export default function menu () {
+function createCategory(catecory, flexDir){
   const options = document.createElement('div');
   options.classList.add('options');
-  let option = createOption(
-    'Zuffoli di Salsiccia', 
-    '6,20', 
-    'Τραγανές φλογέρες με λουκάνικο, κόκκινες πιπεριές και πεκορίνο.');
+  const optionsArr = catecory.getOptions();
+  for (let i =0; i < optionsArr.length; i += 1) {
+    const option = createOption(optionsArr[i]);
     options.appendChild(option);
-
-  const image = createImg('../src/pizza2.jpg');
-
+  }
+  const image = createImg(catecory.getImg());
   const wrapper = document.createElement('div');
-  wrapper.classList.add('flex-md', 'space-between');
+  wrapper.classList.add('flex-md', 'space-between', `${flexDir}`);
 
   wrapper.appendChild(image);
   wrapper.appendChild(options);
-
-  const title = createTitle('Pizza');
+  const title = createTitle(catecory.getTitle());
 
   const menuCategory = document.createElement('div');
-  menuCategory.classList.add('menu-category');
+  menuCategory.classList.add('menu-category', 'm-top-20');
   menuCategory.appendChild(title);
   menuCategory.appendChild(wrapper);
 
+  return menuCategory;
+}
+
+export default function menu () {
   const item = document.querySelector('.item');
-  item.appendChild(menuCategory);
+
+  for (let i = 0; i < categories.length; i+= 1) {
+    let flexDirection = 'n';
+    if (i%2 === 0) {
+      flexDirection = 'reverse';
+    }
+    const category = createCategory(categories[i], flexDirection);
+    item.appendChild(category);
+  }
 };
