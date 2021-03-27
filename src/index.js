@@ -1,7 +1,9 @@
-import * as home from './home'
-import about from './about'
-import menu from './menu'
-import contact from './contact'
+import * as home from './home';
+import about from './about';
+import menu from './menu';
+import contact from './contact';
+import './reset.css';
+import './style.css'
 
 home.header();
 home.main();
