@@ -1,3 +1,4 @@
+import bgImg from './pizza.jpg';
 const content = document.querySelector('#content')
 
 const header = () => {
@@ -15,7 +16,10 @@ const header = () => {
 
 const main = () => {
   const main = document.createElement('main');
-  main.classList.add('main', 'background');
+  main.classList.add('main');
+  main.style.background = `url(${bgImg})`;
+  main.style.backgroundRepeat = 'no-repeat';
+  main.style.backgroundSize = 'cover';
 
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');

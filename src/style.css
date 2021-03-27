@@ -50,12 +50,6 @@
   overflow: hidden;
 }
 
-.background {
-  background: url("./pizza.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .footer {
   height: 60px;
   width: 100%;
