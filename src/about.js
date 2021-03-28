@@ -7,8 +7,8 @@ export default function about() {
 
   const aboutText = document.createElement('p');
   aboutText.classList.add('center');
-  aboutText.textContent = 'Εσείς δεν χορταίνετε τα αγαπημένα σας πιάτα και εμείς δεν χορταίνουμε να βλέπουμε τη χαρά σας';
-  
+  aboutText.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
   item.appendChild(aboutTitle);
   item.appendChild(aboutText);
-};
+}

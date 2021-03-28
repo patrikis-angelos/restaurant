@@ -1,12 +1,13 @@
 import bgImg from './pizza.jpg';
-const content = document.querySelector('#content')
+
+const content = document.querySelector('#content');
 
 const header = () => {
   const header = document.createElement('header');
   const nav = document.createElement('nav');
-  nav.classList.add("fixed", "navbar");
+  nav.classList.add('fixed', 'navbar');
   const restaurant = document.createElement('h1');
-  restaurant.textContent = 'Restaurant name'
+  restaurant.textContent = 'Restaurant name';
   restaurant.classList.add('center');
 
   nav.appendChild(restaurant);
@@ -34,7 +35,7 @@ const main = () => {
   contact.classList.add('tab');
   contact.textContent = 'Contact';
 
-  const item = document.createElement('div')
+  const item = document.createElement('div');
   item.classList.add('item');
 
   wrapper.appendChild(about);
@@ -45,9 +46,9 @@ const main = () => {
   main.appendChild(wrapper);
 
   content.appendChild(main);
-  
-  menu.style.left = about.offsetWidth + 'px';
-  contact.style.left = about.offsetWidth + menu.offsetWidth + 'px';
+
+  menu.style.left = `${about.offsetWidth}px`;
+  contact.style.left = `${about.offsetWidth + menu.offsetWidth}px`;
 };
 
 const footer = () => {
@@ -55,7 +56,7 @@ const footer = () => {
   footer.classList.add('footer');
 
   content.appendChild(footer);
-}
+};
 
-export default header
-export {header, main, footer};
+export default header;
+export { header, main, footer };

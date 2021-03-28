@@ -3,20 +3,21 @@ import about from './about';
 import menu from './menu';
 import contact from './contact';
 import './reset.css';
-import './style.css'
+import './style.css';
 
 home.header();
 home.main();
 home.footer();
+about();
 
 const item = document.querySelector('.item');
 const tabs = document.querySelectorAll('.tab');
-const tabMethods = [about, menu, contact]
+const tabMethods = [about, menu, contact];
 
 function openTab(index) {
   item.innerHTML = '';
 
-  for (let i = 0; i < tabs.length; i+=1) {
+  for (let i = 0; i < tabs.length; i += 1) {
     tabs[i].classList.remove('active');
   }
 

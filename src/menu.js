@@ -1,10 +1,14 @@
+import pizzaImg from './pizza2.jpg';
+import pastaImg from './pasta.png';
+import burgerImg from './burgers.jpeg';
+
 const MenuCategory = (title, imgUrl, options) => {
   const getTitle = () => title;
   const getImg = () => imgUrl;
   const getOptions = () => options;
 
   return {
-    getTitle, getImg, getOptions
+    getTitle, getImg, getOptions,
   };
 };
 
@@ -14,22 +18,25 @@ const Option = (title, price, description) => {
   const getDescription = () => description;
 
   return {
-    getTitle, getPrice, getDescription
+    getTitle, getPrice, getDescription,
   };
 };
 
-const option1 = Option('Zuffoli di Salsiccia', '6,20', 'Τραγανές φλογέρες με λουκάνικο, κόκκινες πιπεριές και πεκορίνο.');
-const mC = MenuCategory('Pizza', '../src/pizza2.jpg', [option1, option1, option1, option1]);
-const categories = [mC, mC, mC];
+const option1 = Option('Lorem ipsum dolor sit amet', '6,20', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.');
+const option2 = Option('Lorem ipsum dolor', '6,20', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.');
+const category1 = MenuCategory('Pizza', pizzaImg, [option1, option2, option1, option2]);
+const category2 = MenuCategory('Pasta', pastaImg, [option1, option2, option1, option2]);
+const category3 = MenuCategory('Burgers', burgerImg, [option1, option2, option1, option2]);
+const categories = [category1, category2, category3];
 
-function createTitle (title) {
+function createTitle(title) {
   const categoryTitle = document.createElement('h3');
   categoryTitle.textContent = title;
   categoryTitle.classList.add('category-title');
   return categoryTitle;
 }
 
-function createImg (imgUrl) {
+function createImg(imgUrl) {
   const img = document.createElement('img');
   img.classList.add('menu-img');
   img.src = imgUrl;
@@ -42,10 +49,17 @@ function createImg (imgUrl) {
   return imgContainer;
 }
 
-function createOption (option) {
+function createOption(option) {
+  const title = document.createElement('div');
+  title.classList.add('color-white', 'flex', 'space-between');
+
   const optionTitle = document.createElement('h4');
-  optionTitle.classList.add('color-white');
-  optionTitle.textContent = `${option.getTitle()} ${option.getPrice()}`;
+  optionTitle.textContent = `${option.getTitle()}`;
+  const optionPrice = document.createElement('p');
+  optionPrice.textContent = `${option.getPrice()}`;
+
+  title.appendChild(optionTitle);
+  title.appendChild(optionPrice);
 
   const desc = document.createElement('p');
   desc.classList.add('m-top-10');
@@ -54,17 +68,17 @@ function createOption (option) {
   const container = document.createElement('div');
   container.classList.add('m-top-10');
 
-  container.appendChild(optionTitle);
+  container.appendChild(title);
   container.appendChild(desc);
 
   return container;
 }
 
-function createCategory(catecory, flexDir){
+function createCategory(catecory, flexDir) {
   const options = document.createElement('div');
   options.classList.add('options');
   const optionsArr = catecory.getOptions();
-  for (let i =0; i < optionsArr.length; i += 1) {
+  for (let i = 0; i < optionsArr.length; i += 1) {
     const option = createOption(optionsArr[i]);
     options.appendChild(option);
   }
@@ -84,15 +98,15 @@ function createCategory(catecory, flexDir){
   return menuCategory;
 }
 
-export default function menu () {
+export default function menu() {
   const item = document.querySelector('.item');
 
-  for (let i = 0; i < categories.length; i+= 1) {
+  for (let i = 0; i < categories.length; i += 1) {
     let flexDirection = 'n';
-    if (i%2 === 0) {
+    if (i % 2 === 0) {
       flexDirection = 'reverse';
     }
     const category = createCategory(categories[i], flexDirection);
     item.appendChild(category);
   }
-};
+}
