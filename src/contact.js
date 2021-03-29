@@ -1,4 +1,4 @@
-function createIcon(class1, class2) {
+const createIcon = (class1, class2) => {
   const link = document.createElement('a');
   link.classList.add('m-left-10');
   link.href = '#';
@@ -7,9 +7,9 @@ function createIcon(class1, class2) {
   link.appendChild(icon);
 
   return link;
-}
+};
 
-export default function contact() {
+const contact = () => {
   const item = document.querySelector('.item');
 
   const links = document.createElement('h2');
@@ -30,4 +30,6 @@ export default function contact() {
 
   item.appendChild(aboutText);
   item.appendChild(links);
-}
+};
+
+export default contact;

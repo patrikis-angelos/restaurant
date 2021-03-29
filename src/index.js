@@ -13,7 +13,7 @@ const item = document.querySelector('.item');
 const tabs = document.querySelectorAll('.tab');
 const tabMethods = [about, menu, contact];
 
-function openTab(index) {
+const openTab = (index) => {
   item.innerHTML = '';
 
   for (let i = 0; i < tabs.length; i += 1) {
@@ -22,7 +22,7 @@ function openTab(index) {
 
   tabs[index].classList.add('active');
   tabMethods[index]();
-}
+};
 
 for (let i = 0; i < tabs.length; i += 1) {
   tabs[i].onclick = openTab.bind(null, i);

@@ -1,4 +1,4 @@
-export default function about() {
+const about = () => {
   const item = document.querySelector('.item');
 
   const aboutTitle = document.createElement('h2');
@@ -11,4 +11,6 @@ export default function about() {
 
   item.appendChild(aboutTitle);
   item.appendChild(aboutText);
-}
+};
+
+export default about;

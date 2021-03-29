@@ -29,14 +29,14 @@ const category2 = MenuCategory('Pasta', pastaImg, [option1, option2, option1, op
 const category3 = MenuCategory('Burgers', burgerImg, [option1, option2, option1, option2]);
 const categories = [category1, category2, category3];
 
-function createTitle(title) {
+const createTitle = (title) => {
   const categoryTitle = document.createElement('h3');
   categoryTitle.textContent = title;
   categoryTitle.classList.add('category-title');
   return categoryTitle;
-}
+};
 
-function createImg(imgUrl) {
+const createImg = (imgUrl) => {
   const img = document.createElement('img');
   img.classList.add('menu-img');
   img.src = imgUrl;
@@ -47,9 +47,9 @@ function createImg(imgUrl) {
   imgContainer.appendChild(img);
 
   return imgContainer;
-}
+};
 
-function createOption(option) {
+const createOption = (option) => {
   const title = document.createElement('div');
   title.classList.add('color-white', 'flex', 'space-between');
 
@@ -72,9 +72,9 @@ function createOption(option) {
   container.appendChild(desc);
 
   return container;
-}
+};
 
-function createCategory(catecory, flexDir) {
+const createCategory = (catecory, flexDir) => {
   const options = document.createElement('div');
   options.classList.add('options');
   const optionsArr = catecory.getOptions();
@@ -96,9 +96,9 @@ function createCategory(catecory, flexDir) {
   menuCategory.appendChild(wrapper);
 
   return menuCategory;
-}
+};
 
-export default function menu() {
+const menu = () => {
   const item = document.querySelector('.item');
 
   for (let i = 0; i < categories.length; i += 1) {
@@ -109,4 +109,6 @@ export default function menu() {
     const category = createCategory(categories[i], flexDirection);
     item.appendChild(category);
   }
-}
+};
+
+export default menu;
