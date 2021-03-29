@@ -7,7 +7,6 @@ import './style.css';
 
 home.header();
 home.main();
-home.footer();
 about();
 
 const item = document.querySelector('.item');

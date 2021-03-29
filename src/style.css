@@ -30,6 +30,10 @@
   margin-top: 50px;
 }
 
+.m-left-10 {
+  margin-left: 10px;
+}
+
 .color-white {
   color: rgb(184, 184, 184);
 }
@@ -50,9 +54,16 @@
 }
 
 .main {
+  width: 100%;
   min-height: calc(100vh - 60px);
   margin-top: 60px;
   overflow: hidden;
+}
+
+.bg-img {
+  width: 100%;
+  height: calc(100vh - 60px);
+  top: 60px;
 }
 
 .color-green {

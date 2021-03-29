@@ -3,7 +3,7 @@ export default function about() {
 
   const aboutTitle = document.createElement('h2');
   aboutTitle.classList.add('center');
-  aboutTitle.textContent = 'La Pasteria Cucina Italiana';
+  aboutTitle.textContent = 'La Pasta Italian cusine';
 
   const aboutText = document.createElement('p');
   aboutText.classList.add('center');

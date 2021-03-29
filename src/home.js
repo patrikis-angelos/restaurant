@@ -7,7 +7,7 @@ const header = () => {
   const nav = document.createElement('nav');
   nav.classList.add('fixed', 'navbar');
   const restaurant = document.createElement('h1');
-  restaurant.textContent = 'Restaurant name';
+  restaurant.textContent = 'La Pasta';
   restaurant.classList.add('center');
 
   nav.appendChild(restaurant);
@@ -17,10 +17,11 @@ const header = () => {
 
 const main = () => {
   const main = document.createElement('main');
-  main.classList.add('main');
-  main.style.background = `url(${bgImg})`;
-  main.style.backgroundRepeat = 'no-repeat';
-  main.style.backgroundSize = 'cover';
+  const bg = document.createElement('div');
+  bg.classList.add('bg-img', 'fixed');
+  bg.style.background = `url(${bgImg})`;
+  bg.style.backgroundRepeat = 'no-repeat';
+  bg.style.backgroundSize = 'cover';
 
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
@@ -43,6 +44,7 @@ const main = () => {
   wrapper.appendChild(contact);
   wrapper.appendChild(item);
 
+  main.appendChild(bg);
   main.appendChild(wrapper);
 
   content.appendChild(main);
