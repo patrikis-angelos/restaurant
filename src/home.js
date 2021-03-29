@@ -53,12 +53,5 @@ const main = () => {
   contact.style.left = `${about.offsetWidth + menu.offsetWidth}px`;
 };
 
-const footer = () => {
-  const footer = document.createElement('footer');
-  footer.classList.add('footer');
-
-  content.appendChild(footer);
-};
-
 export default header;
-export { header, main, footer };
+export { header, main };
