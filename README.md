@@ -2,12 +2,14 @@
 
 # Restaurant
 
-This project is about a restaurant web page built only with JavaSript. You can find a home page with about, menu and contact tabs
+This project is about a restaurant web page built only with JavaScript. The home page consists of tabs with:
+- About Information
+- The menu
+- Contact Information
 
 ![](./scrn/scrn.png)
 
-## Live Link
-[Live Link]()
+## [Live Link](https://patrick-angelos.github.io/restaurant/)
 
 ## Built With
 
@@ -20,6 +22,7 @@ To set up a local copy of the project
 
 - `git clone git@github.com:patrick-angelos/restaurant.git`
 - `cd restaurant`
+- `npm install` to install dependencies
 
 
 ## Author
